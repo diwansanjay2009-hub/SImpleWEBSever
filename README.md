@@ -37,7 +37,24 @@ Start the server script and check for errors.
 Open a browser and navigate to http://127.0.0.1:8000 (or the assigned port).
 
 ## PROGRAM:
+urls.py
+```
 
+from django.contrib import admin
+from django.urls import path
+from django.http import HttpResponse
+
+# Create a simple view function
+def my_home_page(request):
+    name = "DIWAN SANJAY P M"
+    ref_no = "26018655"
+    return HttpResponse(f"<h1>Name: {name}</h1><p>Reference No: {ref_no}</p>")
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('', my_home_page),  # Routes the root URL to your custom view
+]
+```
 
 ## OUTPUT:
 
